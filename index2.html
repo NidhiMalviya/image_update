@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head><meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    </head>>
+<body>
+<img  id = 'img' src = "sidekiq.png" />
+<!-- <textarea id = "result" rows ="25" cols ="50"></textarea> -->
+
+
+<script>
+    var img = document.getElementById('img');
+    img.crossOrigin = 'Anonymous';
+    img.onload = function()
+    {
+     var canvas = document.createElement('canvas');
+     var ctx = canvas.getContext('2d');
+     canvas.height = this.naturalHeight;
+     canvas.width = this.naturalWidth;
+     ctx.drawImage(this,0,0);
+     var data = canvas.toDataURL('image/jpeg');
+     document.getElementById('result').value = data;
+    };
+  </script>
+</body>
+</html>
+
